@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          // primarySwatch: Colors.white,
-          ),
+        primarySwatch: Colors.blue,
+      ),
       initialRoute: "/home",
       routes: {
         "/home": (_) => const HomePage(),
