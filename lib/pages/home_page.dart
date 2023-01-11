@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +79,11 @@ class HomePage extends StatelessWidget {
                           child: const Text("Assine agora!"),
                         ),
                         Container(
-                          padding: const EdgeInsets.all(25),
+                          padding: const EdgeInsets.all(15),
+                          child: const Text("E-Mail"),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(10),
                           child: const TextField(
                             decoration: InputDecoration(
                                 label: Text("E-mail"),
@@ -90,7 +93,11 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.all(25),
+                          padding: const EdgeInsets.all(5),
+                          child: const Text("Senha"),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(10),
                           child: const TextField(
                             decoration: InputDecoration(
                                 label: Text("Senha"),
@@ -99,9 +106,59 @@ class HomePage extends StatelessWidget {
                                 border: OutlineInputBorder()),
                           ),
                         ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.check_box),
+                            Text("concordo com os termos e condições")
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.check_box),
+                            Text("Aceito a politica de privacidade")
+                          ],
+                        ),
                         Container(
-                            // colocar os checkinbox
-                            )
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(
+                                      onPressed: () {}, child: Text("Entrar"))
+                                ])),
+                        Row(
+                          children: const [
+                            SizedBox(width: 40),
+                            Text("Esqueci minha senha"),
+                            SizedBox(width: 40),
+                            Text("Esqueci meu E-mail")
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [Text("OU")],
+                        ),
+                        Row(
+                          children: const <Widget>[
+                            SizedBox(width: 0),
+                            ElevatedButton(
+                              onPressed: null,
+                              child: Text("Faça seu login com o google"),
+                            ),
+                            SizedBox(width: 0),
+                            ElevatedButton(
+                              onPressed: null,
+                              child: Text("Faça seu login com o apple"),
+                              // arrumar a fonte do button
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ]),
