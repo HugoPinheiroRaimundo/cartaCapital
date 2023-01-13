@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -36,7 +38,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
-            currentIndex: currentIndex,
+            currentIndex: 4,
             // onTap: (index) => setState(() => currentIndex = index), //corrigir isso
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.red,
@@ -75,18 +77,18 @@ class HomePage extends StatelessWidget {
                 label: "PERFIL",
               ),
             ]),
-        body: Center(
-            //  width: double.infinity,
-            child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.start,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             //  SizedBox(
             //    height: 80, // espaçamento entre a tabbar e o icone
             //),
+
+            // Icone de voltar
             Padding(
                 padding: const EdgeInsets.all(20),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Icon(
                       Icons.arrow_back_ios,
@@ -96,15 +98,18 @@ class HomePage extends StatelessWidget {
                   ],
                 )),
             //const SizedBox(height: 0),
+
+            //  começo do scroll está funcional
             Expanded(
                 child: SingleChildScrollView(
                     child: Padding(
               padding:
-                  const EdgeInsets.all(0), // espaçamento lateral do textField
+                  const EdgeInsets.all(20), // espaçamento lateral do textField
               child: Column(children: [
                 //SizedBox(height: 0),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment
+                      .start, //todo alinhamento dos texto até senha textfield 2
                   children: <Widget>[
                     Container(
                       padding: const EdgeInsets.all(5),
@@ -120,11 +125,11 @@ class HomePage extends StatelessWidget {
                       child: const Text("Assine agora!"),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(5),
                       child: const Text("E-Mail"),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(0),
                       child: const TextField(
                         decoration: InputDecoration(
                             label: Text("E-mail"),
@@ -138,7 +143,7 @@ class HomePage extends StatelessWidget {
                       child: const Text("Senha"),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(0),
                       child: const TextField(
                         decoration: InputDecoration(
                             label: Text("Senha"),
@@ -147,55 +152,61 @@ class HomePage extends StatelessWidget {
                             border: OutlineInputBorder()),
                       ),
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.check_box),
-                        Text("concordo com os termos e condições")
-                      ],
+                    Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Row(
+                          children: const [
+                            Icon(Icons.check_box),
+                            Text("concordo com os termos ")
+                          ],
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.check_box),
+                          Text("Aceito a politica de privacidade")
+                        ],
+                      ),
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.check_box),
-                        Text("Aceito a politica de privacidade")
-                      ],
-                    ),
-                    Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              ElevatedButton(
-                                  onPressed: () {}, child: Text("Entrar"))
-                            ])),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(primary: Colors.red),
+                        onPressed: () {},
+                        child: const Text(
+                          "Entrar",
+                          style: TextStyle(fontSize: 12),
+                        )),
                     Row(
                       children: const [
                         SizedBox(width: 40),
-                        Text("Esqueci minha senha"),
+                        Text("Esqueci minha senha",
+                            style: TextStyle(fontSize: 12)),
                         SizedBox(width: 40),
-                        Text("Esqueci meu E-mail")
+                        Text("Esqueci meu E-mail",
+                            style: TextStyle(fontSize: 12))
                       ],
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text("OU")],
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [Text("OU")],
+                      ),
                     ),
                     Row(
                       children: const <Widget>[
-                        SizedBox(width: 0),
+                        SizedBox(width: 28),
                         ElevatedButton(
                           onPressed: null,
-                          child: Text("Faça seu login com o google"),
+                          child: Text("Faça seu login com o google",
+                              style: TextStyle(fontSize: 7)),
                         ),
-                        SizedBox(width: 0),
+                        SizedBox(width: 50),
                         ElevatedButton(
                           onPressed: null,
-                          child: Text("Faça seu login com o apple"),
+                          child: Text("Faça seu login com o apple",
+                              style: TextStyle(fontSize: 7)),
                           // arrumar a fonte do button
                         ),
                       ],
@@ -205,6 +216,6 @@ class HomePage extends StatelessWidget {
               ]),
             )))
           ],
-        )));
+        ));
   }
 }
