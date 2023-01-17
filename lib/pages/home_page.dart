@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -113,7 +111,8 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       padding: const EdgeInsets.all(5),
-                      child: const Text("Entre na sua conta"),
+                      child: const Text("Entre na sua conta",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
                       padding: const EdgeInsets.all(5),
@@ -122,17 +121,25 @@ class HomePage extends StatelessWidget {
                     ),
                     Container(
                       padding: const EdgeInsets.all(5),
-                      child: const Text("Assine agora!"),
+                      child: const Text(
+                        "Assine agora!",
+                        style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.red),
+                      ),
                     ),
                     Container(
                       padding: const EdgeInsets.all(5),
-                      child: const Text("E-Mail"),
+                      child: const Text("E-Mail",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
                       padding: const EdgeInsets.all(0),
                       child: const TextField(
                         decoration: InputDecoration(
-                            label: Text("E-mail"),
+                            label: Text(
+                              "E-mail",
+                            ),
                             hintText: "ex. nome@email.com.br",
                             hintStyle: TextStyle(color: Colors.grey),
                             border: OutlineInputBorder()),
@@ -140,7 +147,8 @@ class HomePage extends StatelessWidget {
                     ),
                     Container(
                       padding: const EdgeInsets.all(5),
-                      child: const Text("Senha"),
+                      child: const Text("Senha",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
                       padding: const EdgeInsets.all(0),
@@ -153,63 +161,92 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                        padding: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(10),
                         child: Row(
                           children: const [
                             Icon(Icons.check_box),
-                            Text("concordo com os termos ")
+                            Text("concordo com os termos e condições ",
+                                style: TextStyle(fontWeight: FontWeight.bold))
                           ],
                         )),
                     Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         children: const [
                           Icon(Icons.check_box),
-                          Text("Aceito a politica de privacidade")
+                          Text("Aceito a politica de privacidade",
+                              style: TextStyle(fontWeight: FontWeight.bold))
                         ],
                       ),
                     ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.red),
-                        onPressed: () {},
-                        child: const Text(
-                          "Entrar",
-                          style: TextStyle(fontSize: 12),
-                        )),
-                    Row(
-                      children: const [
-                        SizedBox(width: 40),
-                        Text("Esqueci minha senha",
-                            style: TextStyle(fontSize: 12)),
-                        SizedBox(width: 40),
-                        Text("Esqueci meu E-mail",
-                            style: TextStyle(fontSize: 12))
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: SizedBox(
+                        width: 500,
+                        height: 50,
+                        child: ElevatedButton(
+                            style:
+                                ElevatedButton.styleFrom(primary: Colors.red),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .restorablePushReplacementNamed('/perfil');
+                            },
+                            child: const Text(
+                              "Entrar",
+                              style: TextStyle(fontSize: 12),
+                            )),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Row(
+                        children: const [
+                          SizedBox(width: 40),
+                          Text("Esqueci minha senha",
+                              style: TextStyle(
+                                fontSize: 12,
+                                decoration: TextDecoration.underline,
+                              )),
+                          SizedBox(width: 40),
+                          Text(
+                            "Esqueci meu E-mail",
+                            style: TextStyle(
+                              fontSize: 12,
+                              decoration: TextDecoration.underline,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [Text("OU")],
+                        children: const [
+                          Text("OU",
+                              style: TextStyle(fontWeight: FontWeight.bold))
+                        ],
                       ),
                     ),
-                    Row(
-                      children: const <Widget>[
-                        SizedBox(width: 28),
-                        ElevatedButton(
-                          onPressed: null,
-                          child: Text("Faça seu login com o google",
-                              style: TextStyle(fontSize: 7)),
-                        ),
-                        SizedBox(width: 50),
-                        ElevatedButton(
-                          onPressed: null,
-                          child: Text("Faça seu login com o apple",
-                              style: TextStyle(fontSize: 7)),
-                          // arrumar a fonte do button
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Row(
+                        children: const <Widget>[
+                          SizedBox(width: 28),
+                          ElevatedButton(
+                            onPressed: null,
+                            child: Text("Faça seu login com o google",
+                                style: TextStyle(fontSize: 7)),
+                          ),
+                          SizedBox(width: 50),
+                          ElevatedButton(
+                            onPressed: null,
+                            child: Text("Faça seu login com o apple",
+                                style: TextStyle(fontSize: 7)),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
