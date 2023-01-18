@@ -95,6 +95,16 @@ class _OnePageState extends State<OnePage> {
               label: "PERFIL",
             ),
           ]),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.red, Colors.white],
+            stops: [0.5, 0.5],
+          ),
+        ),
+      ),
     );
   }
 }
