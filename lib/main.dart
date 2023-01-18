@@ -1,4 +1,5 @@
 import 'package:carta_capital/pages/home_page.dart';
+import 'package:carta_capital/pages/one_page.dart';
 import 'package:carta_capital/pages/perfil_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/home": (_) => const HomePage(),
         "/perfil": (_) => const PerfilPage(),
+        "/one": (_) => const OnePage(),
       },
     );
   }

@@ -7,11 +7,23 @@ class HomePage extends StatelessWidget {
     int currentIndex = 0;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
-          title: const Center(child: Text("Carta Capital")),
+          title: Center(
+            child: RichText(
+                text: const TextSpan(
+                    text: "Carta",
+                    style: TextStyle(color: Colors.red, fontSize: 20),
+                    children: <TextSpan>[
+                  TextSpan(
+                    text: "Capital",
+                    style: TextStyle(color: Colors.black),
+                  )
+                ])),
+          ),
           leading: GestureDetector(
             onTap: () {},
-            child: const Icon(Icons.menu),
+            child: const Icon(Icons.menu, color: Colors.black),
           ),
           actions: [
             Padding(
@@ -20,6 +32,7 @@ class HomePage extends StatelessWidget {
                   onTap: () {},
                   child: const Icon(
                     Icons.search,
+                    color: Colors.black,
                     size: 26.0,
                   ),
                 )),
@@ -30,7 +43,9 @@ class HomePage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).restorablePushReplacementNamed('/one');
+              },
               child: const Text("Assine"),
             ),
           ],
@@ -235,7 +250,7 @@ class HomePage extends StatelessWidget {
                         children: const <Widget>[
                           SizedBox(width: 28),
                           ElevatedButton(
-                            onPressed: null,
+                            onPressed: (null),
                             child: Text("Faça seu login com o google",
                                 style: TextStyle(fontSize: 7)),
                           ),
