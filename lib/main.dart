@@ -1,5 +1,4 @@
-import 'package:carta_capital/pages/home_page.dart';
-import 'package:carta_capital/pages/one_page.dart';
+import 'package:carta_capital/pages/account_page.dart';
 import 'package:carta_capital/pages/perfil_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +18,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "/home",
       routes: {
-        "/home": (_) => HomePage(),
-        "/perfil": (_) => const PerfilPage(),
-        "/one": (_) => const OnePage(),
+        "/home": (_) => const PerfilPage(),
+        "/Conta": (_) => const AccountPage(),
+        //  "/one": (_) => const OnePage(),
       },
     );
   }
