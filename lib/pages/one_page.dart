@@ -96,12 +96,28 @@ class _OnePageState extends State<OnePage> {
             ),
           ]),
       body: Container(
-        decoration: BoxDecoration(
+        height: double.infinity,
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [Colors.red, Colors.white],
             stops: [0.5, 0.5],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            children: const [
+              Padding(padding: EdgeInsets.all(15)),
+              Text(
+                "Edição da semana",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              ),
+              Padding(padding: EdgeInsets.all(15)),
+            ],
           ),
         ),
       ),

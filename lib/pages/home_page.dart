@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int indexCurrent = 0;
+
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -51,8 +58,13 @@ class HomePage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
-            currentIndex: 4,
-            // onTap: (index) => setState(() => currentIndex = index), //corrigir isso
+            currentIndex: indexCurrent,
+            onTap: (index) {
+              print("clicou $index");
+              setState(() {
+                indexCurrent = index;
+              });
+            },
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.red,
             unselectedItemColor: Colors.black,
