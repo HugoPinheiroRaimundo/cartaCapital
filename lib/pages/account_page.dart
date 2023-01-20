@@ -101,42 +101,83 @@ class _AccountPageState extends State<AccountPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text("Minha Conta",
+              const Text("Minha Conta",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              const SizedBox(height: 15),
+              const Text("Veja seu perfil"),
+              const SizedBox(height: 20),
+              const Text("Nome", style: TextStyle(fontWeight: FontWeight.bold)),
+              const TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Maria da Silva Santos'),
+              ),
+              const SizedBox(height: 20),
+              const Text("E-mail",
                   style: TextStyle(fontWeight: FontWeight.bold)),
-              Text("Veja seu perfil"),
-              Text("Nome", style: TextStyle(fontWeight: FontWeight.bold)),
-              TextField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+              const TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'mariadasilva@gmail.com'),
               ),
-              Text("E-mail", style: TextStyle(fontWeight: FontWeight.bold)),
-              TextField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+              const SizedBox(height: 20),
+              const Text("Gênero",
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              const TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), hintText: 'Feminino'),
               ),
-              Text("Gênero", style: TextStyle(fontWeight: FontWeight.bold)),
-              TextField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+              const SizedBox(height: 20),
+              const Text("Nascimento",
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              const TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), hintText: '06/02/1977'),
               ),
-              Text("Nascimento", style: TextStyle(fontWeight: FontWeight.bold)),
-              TextField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 500,
+                height: 50,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.red),
+                    onPressed: () {},
+                    child: const Text("Alterar Minha Senha")),
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Colors.red),
-                  onPressed: () {},
-                  child: Text("Alterar Minha Senha")),
-              Text("Seu Plano", style: TextStyle(fontWeight: FontWeight.bold)),
-              Text("Seu plano atual é o básico por 1 ano:"),
-              Text(" * acesso limitado ao conteúdo digital"),
-              Text("* O seu plano vence dia 25/08/2022"),
-              Text("Forma de pagamento: Cartão de crédito"),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Colors.red),
-                  onPressed: () {},
-                  child: Text("Alterar meu plano")),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Colors.black),
-                  onPressed: () {},
-                  child: Text("Alterar forma de pagamento")),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text("Seu Plano",
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 20),
+              const Text("O seu plano atual é o básico por 1 ano:"),
+              const SizedBox(height: 5),
+              const Text("* Acesso limitado ao conteúdo digital"),
+              const SizedBox(height: 5),
+              const Text("* Acesso as newsletters exclusivas para assinates"),
+              const SizedBox(height: 5),
+              const Text("* O seu plano vence dia 25/08/2022"),
+              const SizedBox(height: 5),
+              const Text("* Forma de pagamento: Cartão de crédito"),
+              const SizedBox(height: 10),
+              SizedBox(
+                width: 500,
+                height: 50,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.red),
+                    onPressed: () {},
+                    child: const Text("Alterar meu plano")),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                width: 500,
+                height: 50,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.black),
+                    onPressed: () {},
+                    child: const Text("Alterar forma de pagamento")),
+              ),
             ]),
       ),
     );
