@@ -139,8 +139,11 @@ class _AccountPageState extends State<AccountPage> {
                 width: 500,
                 height: 50,
                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.red),
-                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(primary: Colors.red[900]),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .restorablePushReplacementNamed('/reset');
+                    },
                     child: const Text("Alterar Minha Senha")),
               ),
               const SizedBox(

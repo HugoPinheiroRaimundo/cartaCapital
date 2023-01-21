@@ -1,3 +1,7 @@
+import 'package:carta_capital/pages/Resets/Email/ResetEmailData.dart';
+import 'package:carta_capital/pages/Resets/Email/ResetEmailSucess.dart';
+import 'package:carta_capital/pages/Resets/Password/ResetPasswordCheck.dart';
+import 'package:carta_capital/pages/Resets/Password/ResetPasswordData.dart';
 import 'package:carta_capital/pages/account_page.dart';
 import 'package:carta_capital/pages/perfil_page.dart';
 import 'package:flutter/material.dart';
@@ -16,11 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/home",
+      initialRoute: "/perfil",
       routes: {
-        "/home": (_) => const PerfilPage(),
+        "/perfil": (_) => const PerfilPage(),
         "/Conta": (_) => const AccountPage(),
-        //  "/one": (_) => const OnePage(),
+        "/reset": (_) => const ResetPassaword(),
+        "/resetData": (_) => const ResetData(),
+        "/resetEmailData": (_) => const ResetEmailData(),
+        "/resetEmailSucess": (_) => const ResetEmailSucess(),
       },
     );
   }

@@ -51,7 +51,7 @@ class _PerfilPageState extends State<PerfilPage> {
                     borderRadius: BorderRadius.circular(5.0)),
               ),
               onPressed: () {
-                Navigator.of(context).restorablePushReplacementNamed('/one');
+                //  Navigator.of(context).restorablePushReplacementNamed('/one');
               },
               child: const Text("Assine"),
             ),
@@ -102,16 +102,9 @@ class _PerfilPageState extends State<PerfilPage> {
               ),
             ]),
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            //  SizedBox(
-            //    height: 80, // espaçamento entre a tabbar e o icone
-            //),
-
-            // Icone de voltar
+          children: [
             Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(15),
                 child: Row(
                   children: const [
                     Icon(
@@ -121,158 +114,152 @@ class _PerfilPageState extends State<PerfilPage> {
                     Text("Voltar")
                   ],
                 )),
-            //const SizedBox(height: 0),
-
-            //  começo do scroll está funcional
             Expanded(
                 child: SingleChildScrollView(
                     child: Padding(
-              padding:
-                  const EdgeInsets.all(20), // espaçamento lateral do textField
+              padding: const EdgeInsets.all(20),
               child: Column(children: [
-                //SizedBox(height: 0),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment
-                      .start, //todo alinhamento dos texto até senha textfield 2
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: const Text("Entre na sua conta",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    const Text("Entre na sua conta",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 15),
+                    const Text("Ainda não tem cadastro no cartaCapital?"),
+                    const Text(
+                      "Assine agora!",
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.red),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child:
-                          const Text("Ainda não tem cadastro no cartaCapital?"),
+                    const SizedBox(height: 20),
+                    const Text("E-Mail",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 5),
+                    const TextField(
+                      decoration: InputDecoration(
+                          hintText: "ex. nome@email.com.br",
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder()),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: const Text(
-                        "Assine agora!",
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.red),
-                      ),
+                    const SizedBox(height: 15),
+                    const Text("Senha",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 5),
+                    const TextField(
+                      decoration: InputDecoration(
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder()),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: const Text("E-Mail",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 15),
+                    Row(
+                      children: const [
+                        Icon(
+                          Icons.check_box,
+                          color: Colors.red,
+                        ),
+                        Text("concordo com os termos e condições ",
+                            style: TextStyle(fontWeight: FontWeight.bold))
+                      ],
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(0),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                            label: Text(
-                              "E-mail",
-                            ),
-                            hintText: "ex. nome@email.com.br",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: OutlineInputBorder()),
-                      ),
+                    Row(
+                      children: const [
+                        Icon(
+                          Icons.check_box,
+                          color: Colors.red,
+                        ),
+                        Text("Aceito a politica de privacidade",
+                            style: TextStyle(fontWeight: FontWeight.bold))
+                      ],
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: const Text("Senha",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 500,
+                      height: 50,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.red[900]),
+                          onPressed: () {
+                            Navigator.of(context)
+                                .restorablePushReplacementNamed('/Conta');
+                          },
+                          child: const Text(
+                            "Entrar",
+                            style: TextStyle(fontSize: 12),
+                          )),
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(0),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                            label: Text("Senha"),
-                            hintText: "Password",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: OutlineInputBorder()),
-                      ),
-                    ),
-                    Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Row(
-                          children: const [
-                            Icon(Icons.check_box),
-                            Text("concordo com os termos e condições ",
-                                style: TextStyle(fontWeight: FontWeight.bold))
-                          ],
-                        )),
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Row(
-                        children: const [
-                          Icon(Icons.check_box),
-                          Text("Aceito a politica de privacidade",
-                              style: TextStyle(fontWeight: FontWeight.bold))
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: SizedBox(
-                        width: 500,
-                        height: 50,
-                        child: ElevatedButton(
-                            style:
-                                ElevatedButton.styleFrom(primary: Colors.red),
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .restorablePushReplacementNamed('/Conta');
-                            },
-                            child: const Text(
-                              "Entrar",
-                              style: TextStyle(fontSize: 12),
-                            )),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Row(
-                        children: const [
-                          SizedBox(width: 40),
-                          Text("Esqueci minha senha",
-                              style: TextStyle(
-                                fontSize: 12,
-                                decoration: TextDecoration.underline,
-                              )),
-                          SizedBox(width: 40),
-                          Text(
-                            "Esqueci meu E-mail",
+                    const SizedBox(height: 15),
+                    Row(
+                      children: const [
+                        SizedBox(width: 40),
+                        Text("Esqueci minha senha",
                             style: TextStyle(
                               fontSize: 12,
                               decoration: TextDecoration.underline,
+                            )),
+                        SizedBox(width: 40),
+                        Text(
+                          "Esqueci meu E-mail",
+                          style: TextStyle(
+                            fontSize: 12,
+                            decoration: TextDecoration.underline,
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text("OU",
+                            style: TextStyle(fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    Row(
+                      children: <Widget>[
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          height: 50,
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .restorablePushReplacementNamed('/resetData');
+                            },
+                            icon: const Icon(
+                              Icons.android,
+                              color: Colors.black,
                             ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text("OU",
-                              style: TextStyle(fontWeight: FontWeight.bold))
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Row(
-                        children: const <Widget>[
-                          SizedBox(width: 28),
-                          ElevatedButton(
-                            onPressed: (null),
-                            child: Text("Faça seu login com o google",
-                                style: TextStyle(fontSize: 7)),
+                            label: const Text("Fazer Login com o goole",
+                                style: TextStyle(
+                                    fontSize: 8, color: Colors.black)),
+                            style:
+                                ElevatedButton.styleFrom(primary: Colors.white),
                           ),
-                          SizedBox(width: 50),
-                          ElevatedButton(
-                            onPressed: null,
-                            child: Text("Faça seu login com o apple",
-                                style: TextStyle(fontSize: 7)),
+                        ),
+                        const SizedBox(width: 40),
+                        SizedBox(
+                          height: 50,
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .restorablePushReplacementNamed(
+                                      '/resetEmailData');
+                            },
+                            icon: const Icon(
+                              Icons.apple,
+                              color: Colors.black,
+                            ),
+                            label: const Text("Fazer Login com apple",
+                                style: TextStyle(
+                                    fontSize: 8, color: Colors.black)),
+                            style:
+                                ElevatedButton.styleFrom(primary: Colors.white),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
