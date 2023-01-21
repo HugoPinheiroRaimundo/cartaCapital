@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PerfilPage extends StatefulWidget {
-  const PerfilPage({super.key});
+class CreateAccount extends StatefulWidget {
+  const CreateAccount({super.key});
 
   @override
-  State<PerfilPage> createState() => _PerfilPageState();
+  State<CreateAccount> createState() => _CreateAccountState();
 }
 
-class _PerfilPageState extends State<PerfilPage> {
+class _CreateAccountState extends State<CreateAccount> {
   int indexCurrent = 0;
 
   @override
@@ -51,8 +51,7 @@ class _PerfilPageState extends State<PerfilPage> {
                     borderRadius: BorderRadius.circular(5.0)),
               ),
               onPressed: () {
-                Navigator.of(context)
-                    .restorablePushReplacementNamed('/createAccount');
+                //  Navigator.of(context).restorablePushReplacementNamed('/one');
               },
               child: const Text("Assine"),
             ),
@@ -124,28 +123,54 @@ class _PerfilPageState extends State<PerfilPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    const Text("Entre na sua conta",
+                    const Text("Crie a sua conta",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 15),
-                    const Text("Ainda não tem cadastro no cartaCapital?"),
+                    const Text("Já tem conta na cartCapital"),
                     const Text(
-                      "Assine agora!",
+                      "Entre agora!",
                       style: TextStyle(
                           decoration: TextDecoration.underline,
                           color: Colors.red),
                     ),
                     const SizedBox(height: 20),
-                    const Text("E-Mail",
+                    const Text("Nome completo",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 5),
                     const TextField(
                       decoration: InputDecoration(
-                          hintText: "ex. nome@email.com.br",
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder()),
+                    ),
+                    const SizedBox(height: 15),
+                    const Text("E-mail",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 5),
+                    const TextField(
+                      decoration: InputDecoration(
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder()),
+                    ),
+                    const SizedBox(height: 15),
+                    const Text("Celular",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 5),
+                    const TextField(
+                      decoration: InputDecoration(
                           hintStyle: TextStyle(color: Colors.grey),
                           border: OutlineInputBorder()),
                     ),
                     const SizedBox(height: 15),
                     const Text("Senha",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 5),
+                    const TextField(
+                      decoration: InputDecoration(
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder()),
+                    ),
+                    const SizedBox(height: 15),
+                    const Text("Confirmar senha",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 5),
                     const TextField(
@@ -186,29 +211,11 @@ class _PerfilPageState extends State<PerfilPage> {
                                 .restorablePushReplacementNamed('/Conta');
                           },
                           child: const Text(
-                            "Entrar",
+                            "Criar Conta",
                             style: TextStyle(fontSize: 12),
                           )),
                     ),
                     const SizedBox(height: 15),
-                    Row(
-                      children: const [
-                        SizedBox(width: 40),
-                        Text("Esqueci minha senha",
-                            style: TextStyle(
-                              fontSize: 12,
-                              decoration: TextDecoration.underline,
-                            )),
-                        SizedBox(width: 40),
-                        Text(
-                          "Esqueci meu E-mail",
-                          style: TextStyle(
-                            fontSize: 12,
-                            decoration: TextDecoration.underline,
-                          ),
-                        )
-                      ],
-                    ),
                     const SizedBox(height: 15),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -225,10 +232,7 @@ class _PerfilPageState extends State<PerfilPage> {
                         SizedBox(
                           height: 50,
                           child: ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .restorablePushReplacementNamed('/resetData');
-                            },
+                            onPressed: () {},
                             icon: const Icon(
                               Icons.android,
                               color: Colors.black,
@@ -244,11 +248,7 @@ class _PerfilPageState extends State<PerfilPage> {
                         SizedBox(
                           height: 50,
                           child: ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .restorablePushReplacementNamed(
-                                      '/resetEmailData');
-                            },
+                            onPressed: () {},
                             icon: const Icon(
                               Icons.apple,
                               color: Colors.black,

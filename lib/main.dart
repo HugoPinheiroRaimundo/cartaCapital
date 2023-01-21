@@ -1,3 +1,4 @@
+import 'package:carta_capital/pages/CreateAccount_page.dart';
 import 'package:carta_capital/pages/Resets/Email/ResetEmailData.dart';
 import 'package:carta_capital/pages/Resets/Email/ResetEmailSucess.dart';
 import 'package:carta_capital/pages/Resets/Password/ResetPasswordCheck.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         "/resetData": (_) => const ResetData(),
         "/resetEmailData": (_) => const ResetEmailData(),
         "/resetEmailSucess": (_) => const ResetEmailSucess(),
+        "/createAccount": (_) => const CreateAccount(),
       },
     );
   }
