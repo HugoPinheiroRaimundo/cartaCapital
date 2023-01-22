@@ -178,7 +178,10 @@ class _AccountPageState extends State<AccountPage> {
                 height: 50,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(primary: Colors.black),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .restorablePushReplacementNamed('/paymentPage');
+                    },
                     child: const Text("Alterar forma de pagamento")),
               ),
             ]),

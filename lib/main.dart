@@ -4,6 +4,7 @@ import 'package:carta_capital/pages/Resets/Email/ResetEmailSucess.dart';
 import 'package:carta_capital/pages/Resets/Password/ResetPasswordCheck.dart';
 import 'package:carta_capital/pages/Resets/Password/ResetPasswordData.dart';
 import 'package:carta_capital/pages/account_page.dart';
+import 'package:carta_capital/pages/payment_page.dart';
 import 'package:carta_capital/pages/perfil_page.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/resetEmailData": (_) => const ResetEmailData(),
         "/resetEmailSucess": (_) => const ResetEmailSucess(),
         "/createAccount": (_) => const CreateAccount(),
+        "/paymentPage": (_) => const PaymentPage(),
       },
     );
   }
